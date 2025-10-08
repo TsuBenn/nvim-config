@@ -9,6 +9,7 @@ local action_state = require("telescope.actions.state")
 local git_cmds = {
     { "add .           │ Add all files", ":Git add ." },
     { "add %           │ Add current file", ":Git add %" },
+    { "add . && commit │ Commit", ':!git add . && git commit'},
     { "commit          │ Commit", ':Git commit'},
     { "push            │ Push", ":Git push -u origin main" },
     { "pull            │ Pull", ":Git pull" },
@@ -68,7 +69,7 @@ local function git_menu_telescope()
             local execute = function(prompt_bufnr)
                 local selection = require("telescope.actions.state").get_selected_entry()
                 actions.close(prompt_bufnr)
-                if selection.value[2] ~= ":Git commit" then
+                if selection.value[2] ~= ":Git commit" and selection.value[2] ~= ':!git add . && git commit' then
                     vim.cmd(selection.value[2])
                 else
                     prompt_user("Commit message:", function(msg)
