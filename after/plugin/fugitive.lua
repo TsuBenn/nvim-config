@@ -8,7 +8,7 @@ local conf = require("telescope.config").values
 local git_cmds = {
     { "add .           | Add all files", ":Git add ." },
     { "add %           | Add current file", ":Git add %" },
-    { "commit          | Commit", ":Git commit" },
+    { "commit          | Commit", ':Git commit'},
     { "push            | Push", ":Git push -u origin main" },
     { "pull            | Pull", ":Git pull" },
     { "diff split      | Diff (split)", ":Gdiffsplit" },
@@ -36,8 +36,10 @@ local function git_menu_telescope()
         attach_mappings = function(_, map)
             local execute = function(prompt_bufnr)
                 local selection = require("telescope.actions.state").get_selected_entry()
-                actions.close(prompt_bufnr)
-                vim.cmd(selection.value[2])
+                if selection.value[2] ~= ":Git commit" then
+                    actions.close(prompt_bufnr)
+                    vim.cmd(selection.value[2])
+                end
             end
             map("i", "<CR>", execute)
             map("n", "<CR>", execute)
