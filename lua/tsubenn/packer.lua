@@ -16,6 +16,8 @@ return require('packer').startup(function(use)
         'lukas-reineke/indent-blankline.nvim',
         'echasnovski/mini.indentscope',
         'goolord/alpha-nvim',
+        'lewis6991/gitsigns.nvim',
+        'sindrets/diffview.nvim',
     })
 
 end)
