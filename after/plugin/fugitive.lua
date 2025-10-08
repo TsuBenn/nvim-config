@@ -1,19 +1,50 @@
 vim.keymap.set("n", "wG", vim.cmd.Git)
 
-local actions = require("telescope.actions")
 local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local conf = require("telescope.config").values
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
 
 local git_cmds = {
-    { "add .           | Add all files", ":Git add ." },
-    { "add %           | Add current file", ":Git add %" },
-    { "commit          | Commit", ':Git commit'},
-    { "push            | Push", ":Git push -u origin main" },
-    { "pull            | Pull", ":Git pull" },
-    { "diff split      | Diff (split)", ":Gdiffsplit" },
-    { "blame           | Blame", ":Git blame" },
+    { "add .           │ Add all files", ":Git add ." },
+    { "add %           │ Add current file", ":Git add %" },
+    { "commit          │ Commit", ':Git commit'},
+    { "push            │ Push", ":Git push -u origin main" },
+    { "pull            │ Pull", ":Git pull" },
+    { "diff split      │ Diff (split)", ":Gdiffsplit" },
+    { "blame           │ Blame", ":Git blame" },
 }
+
+local function prompt_user(prompt_text, callback)
+    pickers
+        .new({}, {
+            prompt_title = prompt_text,
+            layout_config = {
+                width = 0.6,
+                height = 0,
+            },
+            finder = finders.new_table({
+                results = {},
+            }),
+            sorter = conf.generic_sorter({}),
+            attach_mappings = function(_, map)
+                map("i", "<CR>", function(prompt_bufnr)
+                    local input = action_state.get_current_line()
+                    actions.close(prompt_bufnr)
+                    callback(input)
+                end)
+                map("n", "<CR>", function(prompt_bufnr)
+                    local input = action_state.get_current_line()
+                    actions.close(prompt_bufnr)
+                    callback(input)
+                end)
+                return true
+            end,
+        })
+        :find()
+end
+
 
 local function git_menu_telescope()
     pickers.new({}, {
@@ -36,9 +67,17 @@ local function git_menu_telescope()
         attach_mappings = function(_, map)
             local execute = function(prompt_bufnr)
                 local selection = require("telescope.actions.state").get_selected_entry()
+                actions.close(prompt_bufnr)
                 if selection.value[2] ~= ":Git commit" then
-                    actions.close(prompt_bufnr)
                     vim.cmd(selection.value[2])
+                else
+                    prompt_user("Commit message:", function(msg)
+                        if msg and #msg > 0 then
+                            vim.cmd(selection.value[2] .. " -m '" .. msg .. "'")
+                        else
+                            print("Commit cancelled.")
+                        end
+                    end)
                 end
             end
             map("i", "<CR>", execute)
