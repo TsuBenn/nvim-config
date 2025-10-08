@@ -74,7 +74,7 @@ local function git_menu_telescope()
                 else
                     prompt_user("Commit message:", function(msg)
                         if msg and #msg > 0 then
-                            vim.cmd(selection.value[2] .. " -m '" .. msg .. "'")
+                            vim.cmd(selection.value[2] .. ' -m "' .. msg .. '"')
                         else
                             print("Commit cancelled.")
                         end
