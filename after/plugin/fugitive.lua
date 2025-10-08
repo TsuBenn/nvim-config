@@ -69,7 +69,7 @@ local function git_menu_telescope()
             local execute = function(prompt_bufnr)
                 local selection = require("telescope.actions.state").get_selected_entry()
                 actions.close(prompt_bufnr)
-                if selection.value[2] ~= ":Git commit" and selection.value[2] ~= ':!git add . && git commit' then
+                if selection.value[2] ~= ":Git commit" and selection.value[2] ~= ":!git add . && git commit" then
                     vim.cmd(selection.value[2])
                 else
                     prompt_user("Commit message:", function(msg)
