@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 --[[ Quit Neovim ]]--
 vim.keymap.set('n','ZZ', function()
     local quit = string.lower(vim.fn.input("Quit Neovim? (Y/N) > "))

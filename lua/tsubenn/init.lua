@@ -1,5 +1,4 @@
 require('tsubenn.set')
-vim.cmd("colorscheme hutao")
 require("lazy").setup("tsubenn.lazy",{
     ui = {
         border = "rounded",
@@ -8,5 +7,6 @@ require("lazy").setup("tsubenn.lazy",{
 
 })
 
+vim.cmd("colorscheme hutao")
 require('tsubenn.tabline')
 require('tsubenn.keymap')
