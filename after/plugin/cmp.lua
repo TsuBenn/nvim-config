@@ -1,17 +1,3 @@
--- LSP + Mason
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = {
-        "lua_ls",
-        "pyright",
-        "bashls",
-        "jsonls",
-        "html",
-        "cssls",
-    },
-    automatic_installation = true,
-})
-
 -- nvim-cmp setup
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -59,26 +45,3 @@ vim.keymap.set('n', "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set('n', "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set('n', "<leader>r", vim.lsp.buf.references)
 vim.keymap.set('n', "<leader>ds", vim.lsp.buf.document_symbol)
-
-
-
--- Optional: LSPSaga for better UI
-require("lspsaga").setup({})
-
-local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-vim.diagnostic.config({
-    virtual_lines = false,
-    virtual_text = {
-        prefix = "●",
-    },
-    signs = true,
-    underline = true,
-    update_in_insert = false,
-    severity_sort = true,
-})
-
