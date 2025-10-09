@@ -7,14 +7,14 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
 local git_cmds = {
-    { "add .           │ Add all files", ":Git add ." },
-    { "add %           │ Add current file", ":Git add %" },
-    { "add . && commit │ Add all files and Commit", ':!git add . && git commit'},
-    { "commit          │ Commit", ':Git commit'},
-    { "push            │ Push", ":Git push -u origin main" },
-    { "pull            │ Pull", ":Git pull" },
-    { "diff split      │ Diff (split)", ":Gdiffsplit" },
-    { "blame           │ Blame", ":Git blame" },
+    { "add .                │ Add all files", ":Git add ." },
+    { "add %                │ Add current file", ":Git add %" },
+    { "add . and commit     │ Add all files and Commit", ':!git add . && git commit'},
+    { "commit               │ Commit", ':Git commit'},
+    { "push                 │ Push", ":Git push -u origin main" },
+    { "pull                 │ Pull", ":Git pull" },
+    { "diff split           │ Diff (split)", ":Gdiffsplit" },
+    { "blame                │ Blame", ":Git blame" },
 }
 
 local function prompt_user(prompt_text, callback)
