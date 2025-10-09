@@ -1,7 +1,4 @@
 return {
-    -- Packer can manage itself (equivalent in Lazy)
-    {'wbthomason/packer.nvim', enabled = false}, -- disable packer
-
     -- Treesitter with build command
     {
         'nvim-treesitter/nvim-treesitter',
@@ -51,6 +48,5 @@ return {
         { "nvimdev/lspsaga.nvim", config = true },
         { "nvim-lua/plenary.nvim" }, -- required by lspsaga
     },
-
 
 }
