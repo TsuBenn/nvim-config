@@ -21,6 +21,7 @@ local function prompt_user(prompt_text, callback)
     pickers
         .new({}, {
             prompt_title = prompt_text,
+            prompt_prefix = '> git ',
             layout_config = {
                 width = 0.6,
                 height = 0,

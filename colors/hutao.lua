@@ -62,21 +62,3 @@ vim.api.nvim_set_hl(0, "IblIndent", { fg = "#30292c"})
 vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#6b5261" }) -- regular lines
 
 
-function Test()
-    print("Hello World")
-    print("Hello World")
-
-    function Test2()
-        print("Hello World")
-        print("Hello World")
-        print("Hello World")
-        print("Hello World")
-        print("Hello World")
-    end
-
-    print("Hello World")
-    print("Hello World")
-    print("Hello World")
-end
-
-

@@ -1,5 +1,5 @@
 --[[ Quit Neovim ]]--
-vim.keymap.set('n','ZZ', function() 
+vim.keymap.set('n','ZZ', function()
     local quit = string.lower(vim.fn.input("Quit Neovim? (Y/N) > "))
     if quit == 'y' then return 'ZZ'
     else return ':lua print("Did not quit Neovim!")<CR>'
@@ -13,10 +13,10 @@ vim.keymap.set({'x','n','i'},'<C-r>', function()
     local file = vim.fn.expand("%:p")
     local output = vim.fn.expand("%:p:r")
     local exten = vim.fn.expand("%:e")
-    lang = {
+    local lang = {
         -- <input> = { "<run cmd>", "<name>"} --
         py = {"python "..file.."<CR>","Python"},
-        lua ={"lua "..file.."<CR>", "Lua"},
+        lua ={"so<CR>", "Lua"},
         cpp ={"g++ "..file.." -o "..output..".exe && "..output..".exe<CR>", "C++"},
         c ={"clang "..file.." -o "..output..".exe && "..output..".exe<CR>", "C"},
         js ={"node "..file.."<CR>", "JavaScript"},
@@ -36,9 +36,6 @@ end, {expr = true, silent = true})
 
 --[[ Execute macro ]]--
 vim.keymap.set('n','e','@') -- [E]xecute Macro
-
---[[ Map Leader ]]--
-vim.g.mapleader = " "
 
 --[[ Enter Explorer ]]--
 vim.keymap.set('n','we', vim.cmd.Ex)
@@ -681,8 +678,8 @@ vim.keymap.set({'n','x', 'i'},'<C-a>',function()
 end, {expr = true})
 
 --[[ Find letter ]]--
-vim.keymap.set({'n','i','x'},'<C-w>.', 'f', {noremap = true})
-vim.keymap.set({'n','i','x'},'<C-w>,', 'F', {noremap = true})
+vim.keymap.set({'n','x'},'<leader>l', 'f', {noremap = true})
+vim.keymap.set({'n','x'},'<leader>j', 'F', {noremap = true})
 
 --[[ Find next open/close '',"",[],{},(),<> ]]--
 vim.keymap.set('n',"'","f'")

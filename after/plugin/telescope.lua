@@ -11,7 +11,6 @@ require('telescope').setup{
             i = { -- insert mode
                 ["<C-k>"] = actions.move_selection_next,
                 ["<C-i>"] = actions.move_selection_previous,
-                ["<C-i>"] = actions.move_selection_previous,
                 ["<Esc>"] = actions.close,
             },
             n = { -- normal mode
