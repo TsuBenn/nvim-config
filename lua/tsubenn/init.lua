@@ -1,4 +1,3 @@
---[[ Import Files ]]--
 require('tsubenn.set')
 vim.cmd("colorscheme hutao")
 require("lazy").setup("tsubenn.lazy",{
@@ -11,7 +10,3 @@ require("lazy").setup("tsubenn.lazy",{
 
 require('tsubenn.tabline')
 require('tsubenn.keymap')
-
-
-vim.api.nvim_feedkeys('jk', 'n', false)
-
