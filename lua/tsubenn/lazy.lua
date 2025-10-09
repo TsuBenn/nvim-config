@@ -50,6 +50,12 @@ return {
         -- UI Enhancements
         { "nvimdev/lspsaga.nvim", config = true },
         { "nvim-lua/plenary.nvim" }, -- required by lspsaga
-    }
+    },
+
+    {
+        "p00f/clangd_extensions.nvim",
+        ft = { "c", "cpp" }, -- Only load for C/C++ files
+        config = true,
+    },
 
 }

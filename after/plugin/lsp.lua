@@ -12,6 +12,8 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
+require("clangd_extensions").setup({})
+
 -- nvim-cmp setup
 local cmp = require("cmp")
 local luasnip = require("luasnip")
@@ -63,7 +65,7 @@ vim.keymap.set('n', "<leader>ds", vim.lsp.buf.document_symbol)
 
 
 -- Optional: LSPSaga for better UI
---require("lspsaga").setup({})
+require("lspsaga").setup({})
 
 local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
 for type, icon in pairs(signs) do
@@ -82,4 +84,15 @@ vim.diagnostic.config({
     severity_sort = true,
 })
 
+
+vim.lsp.config.clangd = {
+    cmd = {
+        'clangd',
+        '--clang-tidy',
+        '--background-index',
+        '--offset-encoding=utf-8',
+    },
+    root_markers = { '.clangd', 'compile_commands.json' },
+    filetypes = { 'c', 'cpp' },
+}
 
