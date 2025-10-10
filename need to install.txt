@@ -1,0 +1,37 @@
+# For nvim config
+npm
+nodejs
+python
+unzip
+clang
+clang-tools-extra
+fzf
+fd
+lazygit
+tree-sitter-cli
+
+# Terminals
+foot
+kitty
+
+# Linux Packages
+base linux linux-firmware
+intel-ucode/amd-ucode
+sudo
+git
+base-devel
+grub
+timeshift
+wireplumber
+pipewire pipewire-alse pipewire-jack pipewire-pulse
+networkmanager
+reflector
+man
+openssh
+
+
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+# Multilib
+sudo vim /etc/pacman.conf -> uncomment multilib and the line below it
+
