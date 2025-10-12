@@ -292,9 +292,6 @@ vim.keymap.set('x', '<leader><TAB>', function()
     vim.api.nvim_feedkeys("`<V`>","n",false)
 end)
 
---[[ Create new line and enter insert mode ]]--
-vim.keymap.set('n','<CR>','o')
-vim.keymap.set('x','<CR>','s<CR>')
 
 --[[ Create new line above and enter insert mode ]]--
 vim.keymap.set({'n','x'},"<leader><CR>",'<ESC>O')
@@ -350,6 +347,8 @@ vim.keymap.set('x','X', function()
         end
     end
 end) -- Delete selected word(s)
+
+
 
 
 --[[ Remove word(normal) and enter Insert mode ]]--
@@ -416,11 +415,12 @@ local function char_behind_cursor()
 end
 local function char_after_cursor()
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-    if col == 0 then return nil end
+    --if col == 0 then return nil end
     local line = vim.api.nvim_get_current_line()
     local char = line:sub(col+1,col+1)
     return char
 end
+
 
 --[[ Brackets and Quotes Table ]]--
 local bracket = {}
@@ -429,153 +429,6 @@ bracket["("] = ")"
 bracket["["] = "]"
 --bracket["<"] = ">"
 local quote = {'"',"'"}
-
--- [[ Check if bracket is closed Func ]]--
-local function bracket_is_closed(br)
-    local cur_pos = vim.fn.getpos('.')
-    local search_pos = vim.fn.getpos('.')
-
-    while (search_pos[3] >= 1) do
-        if bracket[char_after_cursor()] ~= br then
-            search_pos[3] = search_pos[3] - 1
-            vim.fn.setpos('.',search_pos)
-            if char_after_cursor() == br then
-                return false
-            end
-        else
-            return true
-        end
-    end
-    return false
-end		
-
-local function bracket_opened(br)
-    local cur_pos = vim.fn.getpos('.')
-    local search_pos = vim.fn.getpos('.')
-    local line = vim.api.nvim_get_current_line()
-
-    while (search_pos[3] >= 1) do 
-        search_pos[3] = search_pos[3] - 1
-        vim.fn.setpos('.',search_pos)
-        if char_after_cursor() == br then
-            return true
-        elseif char_after_cursor() == bracket[br] then
-            return false
-        end
-    end
-    return false
-end		
-
-local function bracket_closed(br)
-    local cur_pos = vim.fn.getpos('.')
-    local search_pos = vim.fn.getpos('.')
-    local line = vim.api.nvim_get_current_line()
-
-    while (search_pos[3] <= #line) do 
-        search_pos[3] = search_pos[3] + 1
-        vim.fn.setpos('.',search_pos)
-        if char_after_cursor() == br then
-            return false
-        elseif char_after_cursor() == bracket[br] then
-            return true
-        end
-    end
-    return false
-end		
-
---[[ Check if quote is closed ]]--
-local function in_quote()
-    -- Get current line and cursor position
-    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-    local line = vim.api.nvim_get_current_line()
-
-    -- Everything before cursor
-    local before = line:sub(1, col)
-    -- Everything after cursor
-    local after = line:sub(col + 1)
-
-    -- Count quotes before and after
-    local single_before = select(2, before:gsub("'", ""))
-    local double_before = select(2, before:gsub('"', ""))
-    local single_after = select(2, after:gsub("'", ""))
-    local double_after = select(2, after:gsub('"', ""))
-
-    -- Inside if odd count before and at least one after
-    local inside_single = single_before % 2 == 1 and single_after > 0
-    local inside_double = double_before % 2 == 1 and double_after > 0
-
-    return inside_single or inside_double
-end
-
-local function is_quoted()
-    -- Get current line and cursor position
-    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-    local line = vim.api.nvim_get_current_line()
-
-    -- Everything before cursor
-    local before = line:sub(1, col)
-    -- Everything after cursor
-    local after = line:sub(col + 1)
-
-    -- Count quotes before and after
-    local single_before = select(2, before:gsub("'", ""))
-    local double_before = select(2, before:gsub('"', ""))
-    local single_after = select(2, after:gsub("'", ""))
-    local double_after = select(2, after:gsub('"', ""))
-
-    -- Inside if odd count before and at least one after
-    local is_single_quoted = single_before % 2 == 1 and single_after % 2 == 0
-    local is_double_quoted = double_before % 2 == 1 and double_after % 2 == 0
-
-    return is_single_quoted or is_double_quoted
-end
-
-
-vim.keymap.set("n", "|", function() 
-
-    local q = char_after_cursor()
-
-    if bracket_opened("(") and bracket_closed("(") then
-        return ":echo 'True'<CR>"
-    else
-        return ":echo 'False'<CR>"
-    end
-end, {expr = true})
-
-
-
---[[ Auto open and close brackets ]]--
-for b, a in pairs(bracket) do
-    vim.keymap.set('i', b , function()
-        if not bracket_opened("(") and bracket_closed("(") then
-            return b
-        else
-            return b..a.."<Left>"
-        end
-
-    end, {expr = true})
-    vim.keymap.set('i', a ,function()
-        if char_behind_cursor() == b and char_after_cursor() == a then
-            return '<Right>'
-        elseif char_after_cursor() == a and bracket_is_closed(char_after_cursor()) then
-            return '<Right>'
-        else return a
-        end
-    end,{expr = true})
-end
-
---[[ Auto open and close quotes ]]--
-for i, q in pairs(quote) do
-    vim.keymap.set('i', q, function()
-        if in_quote() and char_after_cursor() == q then
-            return "<Right>"
-        elseif not in_quote() and not is_quoted() and char_after_cursor() ~= q then
-            return q..q.."<Left>" 
-        else
-            return q
-        end
-    end, {expr = true})  
-end
 
 --[[ Remove empty brackets ]]--
 vim.keymap.set({'i'},'<BS>',function()
@@ -592,7 +445,14 @@ vim.keymap.set({'i'},'<BS>',function()
     return "<BS>"
 end, {expr = true})
 
-
+--[[ Create new line and enter insert mode ]]--
+vim.keymap.set('n','<CR>',function()
+    if char_after_cursor() == bracket[char_behind_cursor()] then
+        return 'i<CR><ESC>O'
+    else return 'o'
+    end
+end, {expr = true})
+vim.keymap.set('x','<CR>','s<CR>')
 
 --[[ Squeeze into between brackets when Enter inside them ]]--
 vim.keymap.set('i','<CR>',function()
@@ -672,7 +532,9 @@ end)
 
 --[[ Select Paragraph ]]--
 vim.keymap.set({'n','x', 'i'},'<C-a>',function()
-    if vim.fn.mode() ~= 'V' then
+    if vim.api.nvim_buf_line_count(0) == 1 then
+        return '<ESC>V'
+    elseif vim.fn.mode() ~= 'V' then
         return '<ESC>{jV}k$'
     else
         return '<ESC>GVgg'
