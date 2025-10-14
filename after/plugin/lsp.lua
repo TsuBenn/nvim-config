@@ -9,6 +9,14 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
+require("lspconfig").opts = {
+	servers = {
+		clangd = {
+			mason = false,
+		},
+	},
+}
+
 -- Optional: LSPSaga for better UI
 require("lspsaga").setup({})
 
