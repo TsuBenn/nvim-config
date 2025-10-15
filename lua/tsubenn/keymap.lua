@@ -413,6 +413,13 @@ local function char_behind_cursor()
     local char = line:sub(col,col)
     return char
 end
+local function char_behind_behind_cursor()
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    if col == 0 then return nil end
+    local line = vim.api.nvim_get_current_line()
+    local char = line:sub(col-1,col-1)
+    return char
+end
 local function char_after_cursor()
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
     --if col == 0 then return nil end
@@ -458,6 +465,8 @@ vim.keymap.set('x','<CR>','s<CR>')
 vim.keymap.set('i','<CR>',function()
     if char_after_cursor() == bracket[char_behind_cursor()] then
         return '<CR><ESC>O'
+    elseif char_behind_cursor() == bracket[char_behind_behind_cursor()] then
+        return '<Left><CR><ESC>O'
     else return '<CR>'
     end
 end, {expr = true})
