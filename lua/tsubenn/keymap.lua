@@ -228,9 +228,9 @@ vim.keymap.set({'n','x'},'<leader>i','gg')
 vim.keymap.set({'n','x'},'<leader>k','G')
 
 --[[ Jump to the start and end of line  ]]--
-vim.keymap.set({'n'},'<C-l>','$')
-vim.keymap.set({'x'},'<C-l>','$h')
-vim.keymap.set({'n','x'},'<C-j>','^')
+vim.keymap.set({'n'},'<leader>l','$')
+vim.keymap.set({'x'},'<leader>l','$h')
+vim.keymap.set({'n','x'},'<leader>j','^')
 
 
 --[[Move line ]]--
@@ -385,7 +385,7 @@ vim.keymap.set('x','s','s')
 
 --[[ Remove line and enter Insert mode ]]--
 vim.keymap.set({'n','x'}, '<C-F>', 'S')
-vim.keymap.set('i', '<C-F>', '<ESC>Vs')
+vim.keymap.set('i', '<C-F>', '<ESC>S')
 
 --[[ Basic Navigation in Insert Mode ]]--
 vim.keymap.set('i','<C-l>','<ESC>la')
@@ -550,15 +550,33 @@ vim.keymap.set({'n','x', 'i'},'<C-a>',function()
     end
 end, {expr = true})
 
---[[ Find letter ]]--
-vim.keymap.set({'n','x'},'<leader>l', 'f', {noremap = true})
-vim.keymap.set({'n','x'},'<leader>j', 'F', {noremap = true})
+--[[ Find next occurence or next bracket pair ]]--
+vim.keymap.set({'n','x'},'<C-l>', function()
+    for b, a in pairs(bracket) do
+        if char_after_cursor() == b or char_after_cursor() == a then
+            return '%'
+        end
+    end
+    return 'g*'
+end, {expr = true})
+vim.keymap.set({'n','x'},'<C-j>', function()
+    for b, a in pairs(bracket) do
+        if char_after_cursor() == b or char_after_cursor() == a then
+            return '%'
+        end
+    end
+    return 'g#'
+end, {expr = true})
+
+--[[ Find letters ]]--
+vim.keymap.set({'n','x'},'<leader>f','f')
+vim.keymap.set({'n','x'},'<leader>F','F')
 
 --[[ Find next open/close '',"",[],{},(),<> ]]--
 vim.keymap.set('n',"'","f'")
 vim.keymap.set('n','"','f"')
-vim.keymap.set('n','[','f[')
-vim.keymap.set('n',']','f]')
+vim.keymap.set('n','[<leader>','f[')
+vim.keymap.set('n',']<leader>','f]')
 vim.keymap.set('n','{','f{')
 vim.keymap.set('n','}','f}')
 vim.keymap.set('n','(','f(')
