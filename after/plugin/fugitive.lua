@@ -16,7 +16,7 @@ local git_cmds = {
     { "diff split           │ Diff (split)", ":Gdiffsplit" },
     { "blame                │ Blame", ":Git blame" },
     { "fetch && reset       │ Sync with Github Repo", ":!git fetch origin %% git reset --hard origin/main" },
-    { "init                 │ Add all files", ":Git init" },
+    { "init                 │ Git Initiate", ":Git init" },
 }
 
 local function prompt_user(prompt_text, callback)

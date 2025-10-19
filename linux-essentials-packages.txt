@@ -37,6 +37,7 @@ xdg-desktop-portal-hyprland
 wireplumber
 pipewire pipewire-alse pipewire-jack pipewire-pulse
 pavucontrol
+(REMEMBER TO ENABLE VIA SYSTEMCTL >> systemctl --user enable pipewire.service...)
 
 # Nvidia Drivers
 nvidia nvidia-utils lib32-nvidia-utils
@@ -50,6 +51,7 @@ sudo vim /etc/pacman.conf -> uncomment multilib and the line below it
 # Menu
 rofi
 rofi-emoji
+(REMEMBER TO PROPERLY GENERATE LOCALE VIA LOCALE-GEN >> sudo locale-gen)
 wtype
 wl-clipboard
 
@@ -57,4 +59,10 @@ wl-clipboard
 firefox
 discord
 obs-studio
+
+# Media
+dolphin
+vlc
+vlc-plugin-x264
+vlc-plugin-ffmpeg
 
