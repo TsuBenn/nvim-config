@@ -22,16 +22,39 @@ git
 base-devel
 grub
 timeshift
-wireplumber
-pipewire pipewire-alse pipewire-jack pipewire-pulse
 networkmanager
 reflector
 man
 openssh
+xorg-xinit 
 
+# Hyprland
+hyprland
+qt6-wayland
+xdg-desktop-portal-hyprland
 
+# Audio drivers
+wireplumber
+pipewire pipewire-alse pipewire-jack pipewire-pulse
+pavucontrol
+
+# Nvidia Drivers
+nvidia nvidia-utils lib32-nvidia-utils
+
+# AUR
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 # Multilib
 sudo vim /etc/pacman.conf -> uncomment multilib and the line below it
+
+# Menu
+rofi
+rofi-emoji
+wtype
+wl-clipboard
+
+# Essentials Apps
+firefox
+discord
+obs-studio
 
