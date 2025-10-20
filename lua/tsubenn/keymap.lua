@@ -19,7 +19,7 @@ vim.keymap.set({'x','n','i'},'<C-r>', function()
         -- <input> = { "<run cmd>", "<name>"} --
         py = {"python "..file.."<CR>","Python"},
         lua ={"so<CR>", "Lua"},
-        cpp ={"g++ "..file.." -o "..output..".exe && "..output..".exe<CR>", "C++"},
+        cpp ={"clang++ "..file.." -o "..output..".exe && "..output..".exe<CR>", "C++"},
         c ={"clang "..file.." -o "..output..".exe && "..output..".exe<CR>", "C"},
         js ={"node "..file.."<CR>", "JavaScript"},
         rb ={"ruby "..file.."<CR>", "Ruby"},
@@ -194,10 +194,6 @@ vim.keymap.set({'n','x'},'L','w')
 vim.keymap.set({'n','x'},'<M-l>','e')
 vim.keymap.set({'n','x'},'<M-j>','ge')
 
---[[ Big word jump ]]--
-vim.keymap.set({'n','x'},'<leader>j','B')
-vim.keymap.set({'n','x'},'<leader>l','W')
-
 --[[ Scrolling ]]--
 vim.keymap.set({'n','x','i'},'<C-w>i','<C-y>')
 vim.keymap.set({'n','x','i'},'<C-w>I','5<C-y>')
@@ -228,9 +224,9 @@ vim.keymap.set({'n','x'},'<leader>i','gg')
 vim.keymap.set({'n','x'},'<leader>k','G')
 
 --[[ Jump to the start and end of line  ]]--
-vim.keymap.set({'n'},'<leader>l','$')
-vim.keymap.set({'x'},'<leader>l','$h')
-vim.keymap.set({'n','x'},'<leader>j','^')
+vim.keymap.set({'n'},'<C-l>','$')
+vim.keymap.set({'x'},'<C-l>','$h')
+vim.keymap.set({'n','x'},'<C-j>','^')
 
 
 --[[Move line ]]--
@@ -551,7 +547,7 @@ vim.keymap.set({'n','x', 'i'},'<C-a>',function()
 end, {expr = true})
 
 --[[ Find next occurence or next bracket pair ]]--
-vim.keymap.set({'n','x'},'<C-l>', function()
+vim.keymap.set({'n','x'},'<leader>l', function()
     for b, a in pairs(bracket) do
         if char_after_cursor() == b or char_after_cursor() == a then
             return '%'
@@ -559,7 +555,7 @@ vim.keymap.set({'n','x'},'<C-l>', function()
     end
     return 'g*'
 end, {expr = true})
-vim.keymap.set({'n','x'},'<C-j>', function()
+vim.keymap.set({'n','x'},'<leader>j', function()
     for b, a in pairs(bracket) do
         if char_after_cursor() == b or char_after_cursor() == a then
             return '%'
