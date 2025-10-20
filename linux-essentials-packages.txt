@@ -77,5 +77,13 @@ htop
 atop
 
 # Unikey
-fcitx5 fcitx5-im fcitx5-configtool fcitx5-unikey
+fcitx5 fcitx5-im fcitx5-configtool
+fcitx5-unikey #Vietnamese
+fcitx5-mozc   #Japanese
+(
+REMEMBER TO SET THE ENV VAR:
+- export GTK_IM_MODULE=fcitx
+- export QT_IM_MODULE=fcitx
+- export XMODIFIERS=@im=fcitx
+)
 
