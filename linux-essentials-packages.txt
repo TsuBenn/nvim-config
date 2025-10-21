@@ -5,6 +5,7 @@ python
 unzip
 clang
 clang-tools-extra
+go
 fzf
 fd
 lazygit
