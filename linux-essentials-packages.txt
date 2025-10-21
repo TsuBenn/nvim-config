@@ -67,6 +67,7 @@ archlinux-xdg-menu
 
 
 # Media
+yazi
 dolphin
 vlc
 vlc-plugin-x264
