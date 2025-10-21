@@ -61,6 +61,10 @@ firefox
 discord
 obs-studio
 
+# Fix Default Apps running thing?
+archlinux-xdg-menu
+
+
 # Media
 dolphin
 vlc
@@ -70,6 +74,7 @@ vlc-plugin-ffmpeg
 # Gaming
 portproton
 gamemode
+gamescope
 
 # Fonts
 noto-fonts 
