@@ -71,6 +71,12 @@ vlc-plugin-ffmpeg
 portproton
 gamemode
 
+# Fonts
+noto-fonts 
+noto-fonts-emoji
+noto-fonts-cjk
+noto-fonts-extra
+
 # Monitoring
 iftop
 htop
@@ -86,4 +92,14 @@ REMEMBER TO SET THE ENV VAR:
 - export QT_IM_MODULE=fcitx
 - export XMODIFIERS=@im=fcitx
 )
+
+# Clipboard
+clipvault
+wl-clipboard
+
+# Uxplay (iPad Screen Sharing)
+uxplay
+gstreamer
+gst-plugins-good gst-plugins-bad gst-libav gstreamer-vaapi
+(REMEMBER TO START avahi-daemon USING systemctl)
 
