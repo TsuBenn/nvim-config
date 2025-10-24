@@ -43,6 +43,8 @@ pavucontrol
 # Nvidia Drivers
 nvidia nvidia-utils lib32-nvidia-utils
 linix-headers
+cuda (This thing is heavy, careful)
+libva-nvidia-driver
 
 # AUR
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -69,9 +71,12 @@ archlinux-xdg-menu
 # Media
 yazi
 dolphin
+ - XDG_MENU_PREFIX = arch- kbuildsyscoca6
+ - env = XDG_MENU_PREFIX, arch- (hyprland.conf)
 vlc
 vlc-plugin-x264
 vlc-plugin-ffmpeg
+alac wavpack lame libmad aac
 
 # Gaming
 portproton
@@ -88,6 +93,7 @@ noto-fonts-extra
 iftop
 htop
 atop
+nvtop
 
 # Unikey
 fcitx5 fcitx5-im fcitx5-configtool
@@ -122,5 +128,11 @@ meson
 hyprpm
 cpio
 
-# Audio Visuallizer
+# Cool Aesthetic CLI stuff
 cava
+cbonsai
+
+# Flatpak Apps
+Kdenlive
+EasyEffects
+
