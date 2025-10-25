@@ -39,6 +39,7 @@ wireplumber
 pipewire pipewire-alse pipewire-jack pipewire-pulse
 pavucontrol
 (REMEMBER TO ENABLE VIA SYSTEMCTL >> systemctl --user enable pipewire.service...)
+EasyEffects (REMEMBER lsp-plugins)
 
 # Nvidia Drivers
 nvidia nvidia-utils lib32-nvidia-utils
@@ -134,5 +135,4 @@ cbonsai
 
 # Flatpak Apps
 Kdenlive
-EasyEffects
 
