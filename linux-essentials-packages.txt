@@ -29,6 +29,9 @@ man
 openssh
 xorg-xinit 
 
+# Keymap
+keyd (sudo systemctl enable keyd --now)
+
 # Hyprland
 hyprland
 qt6-wayland
