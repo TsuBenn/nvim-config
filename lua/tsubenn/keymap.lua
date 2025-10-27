@@ -383,11 +383,11 @@ vim.keymap.set('x','s','s')
 vim.keymap.set({'n','x'}, '<C-F>', 'S')
 vim.keymap.set('i', '<C-F>', '<ESC>S')
 
---[[ Basic Navigation in Insert Mode ]]--
-vim.keymap.set('i','<C-l>','<ESC>la')
-vim.keymap.set('i','<C-j>','<ESC>i')
-vim.keymap.set('i','<C-i>','<ESC>ka')
-vim.keymap.set('i','<C-k>','<ESC>ja')
+--[[ Backspace/Delete in Insert Mode ]]--
+vim.keymap.set('i','<C-l>','<DEL>')
+vim.keymap.set('i','<C-j>','<BS>')
+vim.keymap.set('i','<C-i>','<ESC>viws')
+vim.keymap.set('i','<C-k>','<ESC>lviws')
 
 --[[ Enter Visual block mode ]]--
 vim.keymap.set({'n','x'},'<M-v>','<C-v>')
@@ -495,6 +495,7 @@ vim.keymap.set('i','<C-q>','<C-w>')
 
 --[[ Backspace in insert mode ]]--
 vim.keymap.set('i','<C-u>','<BS>')
+vim.keymap.set('i','<C-BS>','<ESC>viws')
 
 --[[ Select word ]]--
 vim.keymap.set('x','v', function()
