@@ -74,6 +74,7 @@ archlinux-xdg-menu
 
 
 # Media
+mpv
 yazi
 dolphin
  - XDG_MENU_PREFIX = arch- kbuildsyscoca6
