@@ -99,6 +99,7 @@ noto-fonts-extra
 iftop
 htop
 atop
+btop (This looks the best)
 nvtop
 
 # Unikey
