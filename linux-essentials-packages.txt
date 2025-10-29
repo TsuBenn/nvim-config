@@ -49,6 +49,7 @@ nvidia nvidia-utils lib32-nvidia-utils
 linix-headers
 cuda (This thing is heavy, careful)
 libva-nvidia-driver
+opencl (Get the necessary ones)
 
 # AUR
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si

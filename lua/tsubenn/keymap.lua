@@ -23,6 +23,7 @@ vim.keymap.set({'x','n','i'},'<C-r>', function()
         c ={"clang "..file.." -o "..output..".exe && "..output..".exe<CR>", "C"},
         js ={"node "..file.."<CR>", "JavaScript"},
         rb ={"ruby "..file.."<CR>", "Ruby"},
+        rs ={"rustc "..file.." -o "..output.." && "..output.."<CR>", "Ruby"},
 
     }
     --local ask = vim.fn.input("Language > ")
