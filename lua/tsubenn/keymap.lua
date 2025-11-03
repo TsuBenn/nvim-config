@@ -203,16 +203,10 @@ vim.keymap.set({'n','x','i'},'<C-w>K','5<C-e>')
 
 --[[ Multi-line jumping ]]--
 local mul_ln_jmp = 3
-vim.keymap.set({'n','x','i'}, "<C-k>", function()
-    mul_ln_jmp = vim.fn.input("Multi line jump > ")
-    while not tonumber(mul_ln_jmp) do
-        mul_ln_jmp = vim.fn.input("Multi line jump > ")
-    end
-end)
-vim.keymap.set({'n','x'},'I', function() 
+vim.keymap.set({'n','x'},'I', function()
     return mul_ln_jmp.."k"
 end, {expr = true})
-vim.keymap.set({'n','x'},'K', function() 
+vim.keymap.set({'n','x'},'K', function()
     return mul_ln_jmp.."j"
 end, {expr = true})
 
@@ -674,4 +668,5 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.keymap.set('n','k','<Down>', opts)
         vim.keymap.set('n','l','<Right>', opts)
     end})
+
 

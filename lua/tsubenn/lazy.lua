@@ -24,6 +24,7 @@ return {
     'goolord/alpha-nvim',
     'lewis6991/gitsigns.nvim',
     'sindrets/diffview.nvim',
+    "gbprod/yanky.nvim",
 
     {
         -- LSP Support

@@ -30,7 +30,7 @@ openssh
 xorg-xinit 
 
 # Keymap
-keyd (sudo systemctl enable keyd --now)
+keyd (sudo systemctl enable keyd --now - /etc/keyd/default.conf)
 
 # Hyprland
 hyprland
@@ -144,3 +144,4 @@ Kdenlive
 
 # Calculator
 Qalculator
+
