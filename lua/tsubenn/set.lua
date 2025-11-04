@@ -38,7 +38,7 @@ vim.opt.smartindent = true
 vim.opt.winborder = "rounded"
 
 vim.opt.ignorecase= true
-
+vim.opt.smartcase= true
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('hightlight-yank', {clear = true}),
