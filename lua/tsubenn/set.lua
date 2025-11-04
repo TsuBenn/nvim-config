@@ -8,21 +8,7 @@ vim.opt.wrap = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 
-local handle = io.popen("uname -s")
-local os_name = handle:read("*a")
-handle:close()
-
-if os_name then
-    os_name = os_name:gsub("%s+", "") -- Remove any trailing whitespace
-else
-    os_name = "Unknown"
-end
-
-if os_name == "Linux" then
-    vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
-else
-    vim.opt.undodir = "C:\\.undodir"
-end
+vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 
 vim.opt.undofile = true
 
@@ -50,6 +36,9 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 vim.opt.winborder = "rounded"
+
+vim.opt.ignorecase= true
+
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('hightlight-yank', {clear = true}),
