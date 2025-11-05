@@ -25,6 +25,8 @@ return {
     'lewis6991/gitsigns.nvim',
     'sindrets/diffview.nvim',
     "gbprod/yanky.nvim",
+    "junegunn/vim-easy-align",
+    "anuvyklack/pretty-fold.nvim",
 
     {
         -- LSP Support
