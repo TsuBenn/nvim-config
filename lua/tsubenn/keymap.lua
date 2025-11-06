@@ -292,7 +292,6 @@ vim.keymap.set({'n','x'},'<BS>','s')
 
 --[[ Backspace(normal) and Cut(visual) ]]--
 vim.keymap.set('n','f','a<BS><ESC>') -- BS
-vim.keymap.set('n','F','Vs<ESC>') -- Clear line
 vim.keymap.set('x','f','x') -- Cut selected letter(s)
 vim.keymap.set('x','F',function()
     if vim.fn.mode() == "v" then
@@ -375,8 +374,8 @@ end)
 vim.keymap.set('x','s','s')
 
 --[[ Remove line and enter Insert mode ]]--
-vim.keymap.set({'n','x'}, '<C-F>', 'S')
-vim.keymap.set('i', '<C-F>', '<ESC>S')
+vim.keymap.set({'n','x'}, 'F', 'S')
+vim.keymap.set('i', 'F', '<ESC>S')
 
 --[[ Backspace/Delete in Insert Mode ]]--
 vim.keymap.set('i','<C-l>','<DEL>')
