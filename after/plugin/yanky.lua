@@ -1,3 +1,3 @@
 require("yanky").setup()
 
-vim.keymap.set({'n','x'}, 'wv', ':Telescope yank_history<CR>')
+vim.keymap.set({'n','x'}, '<c-d>', ':Telescope yank_history<CR>')

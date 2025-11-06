@@ -151,17 +151,15 @@ vim.keymap.set({'i','x'}, '<C-s>', '<ESC>:w<CR>')
 
 
 --[[ Undo ]]--
-vim.keymap.set('n', '<C-z>', 'u')
-vim.keymap.set('i', '<C-z>', '<ESC>u')
-vim.keymap.set('n', '<C-y>', '<C-r>')
+vim.keymap.set('n', '<c-z>', 'u')
+vim.keymap.set('i', '<c-z>', '<ESC>u')
+vim.keymap.set('n', '<c-y>', '<C-r>')
 
 --[[ Copying ]]--
-vim.keymap.set('n', 'c' , 'vy')
-vim.keymap.set('n', 'C' , 'yy') -- Copy whole line(normal)
-vim.keymap.set('x', '<C-d>' , 'y`>p') -- Copy whole line(visual)
-vim.keymap.set('i', '<C-d>' , '<ESC>yy`>pA') -- Copy whole line(normal)
-vim.keymap.set('n', '<C-d>' , 'yyp') -- Copy whole line(normal)
-vim.keymap.set('x', 'c' , 'y')
+vim.keymap.set('n', 'c' , 'yy') -- Copy whole line(normal)
+vim.keymap.set('x', 'C' , 'y`>p') -- Copy whole line(visual)
+vim.keymap.set('n', 'C' , 'yyp') -- Copy whole line(normal)
+vim.keymap.set('x', 'c' , 'y') -- Copy whole line(normal)
 vim.keymap.set('x', 'C' , function()
     if vim.fn.mode() == "v" then
         vim.cmd([[execute "normal! \<ESC>"]])
@@ -219,9 +217,9 @@ vim.keymap.set({'n','x'},'<leader>i','gg')
 vim.keymap.set({'n','x'},'<leader>k','G')
 
 --[[ Jump to the start and end of line  ]]--
-vim.keymap.set({'n'},'<C-l>','$')
-vim.keymap.set({'x'},'<C-l>','$h')
-vim.keymap.set({'n','x'},'<C-j>','^')
+vim.keymap.set({'n'},'<leader>l','$')
+vim.keymap.set({'x'},'<leader>l','$h')
+vim.keymap.set({'n','x'},'<leader>j','^')
 
 
 --[[Move line ]]--
@@ -343,8 +341,8 @@ end) -- Delete selected word(s)
 
 --[[ Remove word(normal) and enter Insert mode ]]--
 vim.keymap.set('n','S','viws')
-vim.keymap.set({'n', 'x', 'i'},'<C-e>','<ESC>v$hxA')
-vim.keymap.set({'n', 'x', 'i'},'<C-q>','<ESC>hv^xI')
+vim.keymap.set({'n', 'x'},'<leader>e','<ESC>v$hxA')
+vim.keymap.set({'n', 'x'},'<leader>q','<ESC>hv^xI')
 
 --[[ Remove selected words then enter insert mode ]]--
 vim.keymap.set('x','S',function()
@@ -355,7 +353,7 @@ vim.keymap.set('x','S',function()
 
         local len = end_pos - start_pos + 1
 
-        if len <= 1 then 
+        if len <= 1 then
             vim.cmd("normal! viw")
             vim.api.nvim_feedkeys("s","n",false)
         else
@@ -375,7 +373,6 @@ vim.keymap.set('x','s','s')
 
 --[[ Remove line and enter Insert mode ]]--
 vim.keymap.set({'n','x'}, 'F', 'S')
-vim.keymap.set('i', 'F', '<ESC>S')
 
 --[[ Backspace/Delete in Insert Mode ]]--
 vim.keymap.set('i','<C-l>','<DEL>')
@@ -385,6 +382,9 @@ vim.keymap.set('i','<C-k>','<ESC>lviws')
 
 --[[ Enter Visual block mode ]]--
 vim.keymap.set({'n','x'},'<M-v>','<C-v>')
+
+--[[ Center Screen ]]--
+vim.keymap.set({'n','x'},'<C-f>', 'zz')
 
 --[[ Open and close brackets selected words ]]--
 vim.keymap.set('x','a{', "<ESC>`>a}<ESC>`<i{<ESC>")
@@ -542,7 +542,7 @@ vim.keymap.set({'n','x', 'i'},'<C-a>',function()
 end, {expr = true})
 
 --[[ Find next occurence or next bracket pair ]]--
-vim.keymap.set({'n','x'},'<leader>l', function()
+vim.keymap.set({'n','x'},'<c-l>', function()
     for b, a in pairs(bracket) do
         if char_after_cursor() == b or char_after_cursor() == a then
             return '%'
@@ -550,7 +550,7 @@ vim.keymap.set({'n','x'},'<leader>l', function()
     end
     return 'g*'
 end, {expr = true})
-vim.keymap.set({'n','x'},'<leader>j', function()
+vim.keymap.set({'n','x'},'<c-j>', function()
     for b, a in pairs(bracket) do
         if char_after_cursor() == b or char_after_cursor() == a then
             return '%'
