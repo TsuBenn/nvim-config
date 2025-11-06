@@ -26,7 +26,7 @@ return {
     'sindrets/diffview.nvim',
     "gbprod/yanky.nvim",
     "junegunn/vim-easy-align",
-    "anuvyklack/pretty-fold.nvim",
+    'kevinhwang91/nvim-ufo','kevinhwang91/promise-async',
 
     {
         -- LSP Support
