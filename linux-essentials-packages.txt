@@ -74,6 +74,7 @@ archlinux-xdg-menu
 
 
 # Media
+pinta (Image Editing Software)
 mpv
 yazi
 dolphin
@@ -85,7 +86,8 @@ vlc-plugin-ffmpeg
 alac wavpack lame libmad aac
 
 # Gaming
-portproton
+mesa-git
+portproton (also get proton-ge)
 gamemode
 gamescope
 
