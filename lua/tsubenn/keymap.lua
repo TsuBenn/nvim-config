@@ -176,6 +176,9 @@ vim.keymap.set('x', 'c' , function()
                 vim.cmd("normal! `<viw`>hiwy")
             end
         end
+    else
+        vim.cmd([[execute "normal! \<ESC>"]])
+        vim.cmd("normal! `<v`>y")
     end
 end)
 
