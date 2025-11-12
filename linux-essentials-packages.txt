@@ -45,11 +45,18 @@ pavucontrol
 EasyEffects (REMEMBER lsp-plugins)
 
 # Nvidia Drivers
-nvidia nvidia-utils lib32-nvidia-utils
+nvidia (nvidia-dkms if linux-zen is used)
+nvidia-utils 
+lib32-nvidia-utils
 linix-headers
 cuda (This thing is heavy, careful)
 libva-nvidia-driver
 opencl (Get the necessary ones)
+
+# Linux Zen
+linux-zen linux-zen-headers
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
 
 # AUR
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
