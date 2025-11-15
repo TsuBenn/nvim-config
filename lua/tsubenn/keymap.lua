@@ -381,7 +381,7 @@ vim.keymap.set({'n','x'}, 'F', 'S')
 vim.keymap.set('i','<C-l>','<DEL>')
 vim.keymap.set('i','<C-j>','<BS>')
 vim.keymap.set('i','<C-i>','<ESC>viws')
-vim.keymap.set('i','<C-k>','<ESC>lviws')
+vim.keymap.set('i','<C-k>','<ESC>llviws')
 
 --[[ Enter Visual block mode ]]--
 vim.keymap.set({'n','x'},'<M-v>','<C-v>')
@@ -487,11 +487,7 @@ vim.keymap.set('x',"<leader>'","<ESC>F'vf'")
 vim.keymap.set('x','"','<ESC>F"lvf"h')
 vim.keymap.set('x','<leader>"','<ESC>F"vf"')
 
---[[ Delete word before the cursor in insert mode ]]--
-vim.keymap.set('i','<C-q>','<C-w>')
-
 --[[ Backspace in insert mode ]]--
-vim.keymap.set('i','<C-u>','<BS>')
 vim.keymap.set('i','<C-BS>','<ESC>viws')
 
 --[[ Select word ]]--
