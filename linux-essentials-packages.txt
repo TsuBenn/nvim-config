@@ -134,6 +134,10 @@ gstreamer
 gst-plugins-good gst-plugins-bad gst-libav gstreamer-vaapi
 (REMEMBER TO START avahi-daemon USING systemctl)
 
+# Android screen Sharing
+scrcpy
+
+
 # Notification
 swaync
 
