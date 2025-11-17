@@ -136,6 +136,7 @@ gst-plugins-good gst-plugins-bad gst-libav gstreamer-vaapi
 
 # Android screen Sharing
 scrcpy
+adb
 
 
 # Notification
