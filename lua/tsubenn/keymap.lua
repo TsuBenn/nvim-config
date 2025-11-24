@@ -158,28 +158,8 @@ vim.keymap.set('n', '<c-y>', '<C-r>')
 --[[ Copying ]]--
 vim.keymap.set('n', 'c' , 'yy') -- Copy whole line(normal)
 vim.keymap.set('n', 'C' , 'yyp') -- Copy whole line(normal)
---vim.keymap.set('x', 'C' , '<ESC>`<^V`>y`>p') -- Copy whole line(normal)
+vim.keymap.set('x', 'C' , '<ESC>`<^V`>y`>p') -- Copy whole line(normal)
 vim.keymap.set('x', 'c' , 'y') -- Copy whole line(visual)
-vim.keymap.set('x', 'C' , function()
-    if vim.fn.mode() == "v" then
-        vim.cmd([[execute "normal! \<ESC>"]])
-        local start_pos = vim.fn.getpos("'<")
-        local end_pos = vim.fn.getpos("'>")
-
-        local len = end_pos[3] - start_pos[3] + 1
-
-        if len <= 1 then vim.cmd("normal! viw")
-        else
-            if vim.fn.getpos(".")[3] == start_pos[3] then
-                vim.cmd("normal! `>viwo`<liwy")
-            else
-                vim.cmd("normal! `<viw`>hiwy")
-            end
-        end
-    end
-end)
-
-
 
 --[[ Basic movement ]]--
 vim.keymap.set({'n','x'},'i','k')
