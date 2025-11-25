@@ -32,6 +32,17 @@ xorg-xinit
 
 # Keymap
 keyd (sudo systemctl enable keyd --now - /etc/keyd/default.conf)
+```
+[ids]
+
+*
+
+[main]
+
+capslock = esc
+
+esc = `
+```
 
 # Hyprland
 hyprland
@@ -92,7 +103,7 @@ dolphin
 vlc
 vlc-plugin-x264
 vlc-plugin-ffmpeg
-alac wavpack lame libmad aac
+alac wavpack lame libmad
 
 # Gaming
 mesa-git
