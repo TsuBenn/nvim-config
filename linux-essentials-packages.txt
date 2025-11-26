@@ -102,6 +102,7 @@ discord
 obs-studio
 7zip
 zoxide
+filelight
 
 # Fix Default Apps running thing?
 archlinux-xdg-menu
