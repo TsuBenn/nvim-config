@@ -103,6 +103,7 @@ obs-studio
 7zip
 zoxide
 filelight
+ark
 
 # Fix Default Apps running thing?
 archlinux-xdg-menu
