@@ -36,7 +36,7 @@ git config --global user.email "TsuBenn@github.com"
 git config --global user.name "TsuBenn"
 
 # Keymap
-keyd (sudo systemctl enable keyd --now - /etc/keyd/default.conf)
+keyd (sudo systemctl enable keyd --now); config path: (/etc/keyd/default.conf)
 ```
 [ids]
 
