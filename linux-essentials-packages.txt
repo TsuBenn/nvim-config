@@ -11,6 +11,7 @@ fzf
 fd
 lazygit
 tree-sitter-cli
+meson
 
 # Terminals
 foot
@@ -29,6 +30,10 @@ reflector
 man
 openssh
 xorg-xinit 
+
+# Git config
+git config --global user.email "TsuBenn@github.com"
+git config --global user.name "TsuBenn"
 
 # Keymap
 keyd (sudo systemctl enable keyd --now - /etc/keyd/default.conf)
@@ -72,7 +77,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 
 # AUR
-git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd
 
 # Multilib
 sudo vim /etc/pacman.conf -> uncomment multilib and the line below it
@@ -88,6 +93,8 @@ wl-clipboard
 firefox
 discord
 obs-studio
+7zip
+zoxide
 
 # Fix Default Apps running thing?
 archlinux-xdg-menu
@@ -106,10 +113,11 @@ vlc-plugin-ffmpeg
 alac wavpack lame libmad
 
 # Gaming
-mesa-git
-portproton (also get proton-ge)
-gamemode
-gamescope
+mesa
+portproton *
+gamemode (optional)
+gamescope (optional)
+wine
 
 # Fonts
 noto-fonts 
@@ -136,18 +144,18 @@ REMEMBER TO SET THE ENV VAR:
 )
 
 # Clipboard
-clipvault
+clipvault *
 wl-clipboard
 
 # Uxplay (iPad Screen Sharing)
-uxplay
+uxplay *
 gstreamer
 gst-plugins-good gst-plugins-bad gst-libav gstreamer-vaapi
 (REMEMBER TO START avahi-daemon USING systemctl)
 
 # Android screen Sharing
 scrcpy
-adb
+adb *
 
 
 # Notification
@@ -157,20 +165,15 @@ swaync
 quickshell
 qt6-base qt6-declarative qt6-svg qt6-wayland
 
-# Hyprland Plugins
-meson
-hyprpm
-cpio
-
 # Cool Aesthetic CLI stuff
 cava
-cbonsai
+cbonsai *
 
 # Flatpak Apps
 Kdenlive
 
 # Calculator
-Qalculator
+Qalculator *
 
 # Lossless Scaling
-lsfg-vk
+lsfg-vk *
