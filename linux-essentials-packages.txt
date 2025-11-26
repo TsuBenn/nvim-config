@@ -180,3 +180,7 @@ Qalculator *
 
 # Lossless Scaling
 lsfg-vk *
+
+# Case RGB
+openrgb
+

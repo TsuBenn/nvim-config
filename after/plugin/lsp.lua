@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "clangd",
         "pyright",
+        "qmlls",
     },
     automatic_installation = true,
 })
