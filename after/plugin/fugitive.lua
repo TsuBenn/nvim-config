@@ -7,16 +7,16 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
 local git_cmds = {
-    { "add . and commit and push     │ Push everything", ':!git add . && git commit'},
-    { "push                          │ Push", ":Git push -u origin main" },
-    { "add .                         │ Add all files", ":Git add ." },
-    { "add %                         │ Add current file", ":Git add %" },
-    { "commit                        │ Commit", ':Git commit'},
-    { "pull                          │ Pull", ":Git pull" },
-    { "diff split                    │ Diff (split)", ":Gdiffsplit" },
-    { "blame                         │ Blame", ":Git blame" },
-    { "fetch && reset                │ Sync with Github Repo", ":!git fetch origin && git reset --hard origin/main" },
-    { "init                          │ Git Initiate", ":Git init" },
+    { "add . and commit     │ Add all files and Commit", ':!git add . && git commit'},
+    { "push                 │ Push", ":Git push -u origin main" },
+    { "add .                │ Add all files", ":Git add ." },
+    { "add %                │ Add current file", ":Git add %" },
+    { "commit               │ Commit", ':Git commit'},
+    { "pull                 │ Pull", ":Git pull" },
+    { "diff split           │ Diff (split)", ":Gdiffsplit" },
+    { "blame                │ Blame", ":Git blame" },
+    { "fetch && reset       │ Sync with Github Repo", ":!git fetch origin && git reset --hard origin/main" },
+    { "init                 │ Git Initiate", ":Git init" },
 }
 
 local function prompt_user(prompt_text, callback)
@@ -77,7 +77,7 @@ local function git_menu_telescope()
                 else
                     prompt_user("Commit message:", function(msg)
                         if msg and #msg > 0 then
-                            vim.cmd(selection.value[2] .. ' -m "' .. msg .. '" && git push -u origin main')
+                            vim.cmd(selection.value[2] .. ' -m "' .. msg .. '"')
                         else
                             print("Commit cancelled.")
                         end
