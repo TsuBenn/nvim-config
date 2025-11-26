@@ -54,6 +54,13 @@ hyprland
 qt6-wayland
 xdg-desktop-portal-hyprland
 
+# Fonts
+sans-serif
+noto-fonts 
+noto-fonts-emoji
+noto-fonts-cjk
+noto-fonts-extra
+
 # Audio drivers
 wireplumber
 pipewire pipewire-alse pipewire-jack pipewire-pulse
@@ -118,12 +125,6 @@ portproton *
 gamemode (optional)
 gamescope (optional)
 wine
-
-# Fonts
-noto-fonts 
-noto-fonts-emoji
-noto-fonts-cjk
-noto-fonts-extra
 
 # Monitoring
 iftop
