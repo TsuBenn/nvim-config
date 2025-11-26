@@ -152,7 +152,7 @@ wl-clipboard
 uxplay *
 gstreamer
 gst-plugins-good gst-plugins-bad gst-libav gstreamer-vaapi
-(REMEMBER TO START avahi-daemon USING systemctl)
+(systemctl --user [start/stop/enable/disable/status] uxplay)
 
 # Android screen Sharing
 scrcpy
