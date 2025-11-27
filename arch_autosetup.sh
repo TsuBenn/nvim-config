@@ -35,7 +35,7 @@ case $kernel_choice in
         HEADERS="linux-lts-headers"
         ;;
     *)
-        echo -e "${RED}Invalid choice, default to Linux-zen.${NC}"
+        echo -e "${RED}Invalid choice, installing Linux-zen.${NC}"
         KERNEL="linux-zen"
         HEADERS="linux-zen-headers"
         ;;
@@ -50,7 +50,7 @@ read -p "" use_nvidia
 
 if [[ $use_nvidia == "y" || $use_nvidia == "Y" ]]; then
     echo -e "${CYAN}Installing NVIDIA drivers...${NC}"
-    
+
     if [[ "$KERNEL" == "linux-zen" || "$KERNEL" == "linux-lts" ]]; then
         sudo pacman -S --noconfirm --needed nvidia-dkms nvidia-utils lib32-nvidia-utils
         echo -e "${GREEN}✔ Installed nvidia-dkms for $KERNEL${NC}"
@@ -58,7 +58,7 @@ if [[ $use_nvidia == "y" || $use_nvidia == "Y" ]]; then
         sudo pacman -S --noconfirm --needed nvidia nvidia-utils lib32-nvidia-utils
         echo -e "${GREEN}✔ Installed standard NVIDIA driver for linux${NC}"
     fi
-    
+
     echo -e "${YELLOW}Remember to run: sudo mkinitcpio -P${NC}"
 fi
 
@@ -96,8 +96,15 @@ NVIDIA_PKGS=(
     nvidia-utils lib32-nvidia-utils libva-nvidia-driver
 )
 
+GAMING_PKGS=(
+    mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon gamemode lib32-gamemode mangohud goverlay
+    steam
+    python-kivy lib32-vulkan-icd-loader vulkan-driver winetricks wine
+)
+
+
 ESSENTIAL_APPS=(
-    firefox discord obs-studio 7zip zoxide filelight ark mpv yazi dolphin
+    discord obs-studio 7zip zoxide filelight ark mpv yazi dolphin
     vlc vlc-plugin-x264 vlc-plugin-ffmpeg lame libmad pinta openrgb github-cli
 )
 
@@ -114,6 +121,9 @@ RICING=(
 
 # ===== AUR Packages (marked with *) =====
 AUR_PACKAGES=(
+    xboxdrv
+    proton-ge-custom-bin
+    brave-bin
     cbonsai
     alac
     wavpack
