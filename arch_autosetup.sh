@@ -97,9 +97,12 @@ NVIDIA_PKGS=(
 )
 
 GAMING_PKGS=(
-    mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon gamemode lib32-gamemode mangohud goverlay
     steam
-    python-kivy lib32-vulkan-icd-loader vulkan-driver winetricks wine
+    mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon 
+    gamemode lib32-gamemode 
+    mangohud goverlay
+    wine winetricks 
+    python-kivy lib32-vulkan-icd-loader vulkan-driver 
 )
 
 
