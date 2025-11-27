@@ -230,6 +230,7 @@ sudo keyd reload
 
 
 # ===== System Update =====
+echo -e ""
 echo -e "${BLUE}Updating system...${NC}"
 
 # ===== Manual Reminders =====
