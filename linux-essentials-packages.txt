@@ -12,6 +12,8 @@ fd
 lazygit
 tree-sitter-cli
 meson
+cmake
+make
 
 # Terminals
 foot
