@@ -81,7 +81,7 @@ DEV_PKGS=(
 TERMINALS=(kitty)
 
 HYPR_PKGS=(
-    hyprland qt6-wayland xdg-desktop-portal-hyprland hyprshot
+    hyprland qt6-wayland xdg-desktop-portal-hyprland hyprshot archlinux-xdg-menu
 )
 
 FONTS=(
@@ -106,6 +106,7 @@ GAMING_PKGS=(
 ESSENTIAL_APPS=(
     discord obs-studio 7zip zoxide filelight ark mpv yazi dolphin
     vlc vlc-plugin-x264 vlc-plugin-ffmpeg lame libmad pinta openrgb github-cli
+    flatpak avahi
 )
 
 MONITORING=(btop nvtop)
@@ -119,7 +120,7 @@ RICING=(
     qt6-base qt6-declarative qt6-svg qt6-wayland
 )
 
-# ===== AUR Packages (marked with *) =====
+# ===== AUR Packages =====
 AUR_PACKAGES=(
     xboxdrv
     proton-ge-custom-bin
@@ -133,6 +134,11 @@ AUR_PACKAGES=(
     adb
     qalculator
     lsfg-vk
+)
+
+# ===== Flatpak Apps =====
+FLATPAK_APPS=(
+    kdenlive
 )
 
 # ===== Install Function =====
@@ -180,11 +186,21 @@ for PKG in "${AUR_PACKAGES[@]}"; do
 done
 echo -e "${GREEN}✔ AUR packages installed!${NC}"
 
+# ===== Install AUR Packages =====
+echo -e "${BLUE}Installing Flatpak apps...${NC}"
+for PKG in "${FLATPAK_APPS[@]}"; do
+    echo -e "${CYAN}→ Installing (Flatpak) $PKG...${NC}"
+    flatpak install "$PKG"
+done
+echo -e "${GREEN}✔ AUR packages installed!${NC}"
+
 # ===== Enable Services =====
 echo -e "${BLUE}Enabling system services...${NC}"
 sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now uxplay
 sudo systemctl enable --now keyd
 sudo systemctl enable --now sshd
+systemctl --user enable uxplay
 systemctl --user enable --now pipewire.service pipewire-pulse.service wireplumber.service 2>/dev/null || true
 echo -e "${GREEN}✔ Services enabled${NC}"
 
