@@ -133,6 +133,7 @@ AUR_PACKAGES=(
     adb
     qalculator
     lsfg-vk
+    qimgv
 )
 
 # ===== Flatpak Apps =====
