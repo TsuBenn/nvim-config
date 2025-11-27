@@ -188,3 +188,7 @@ lsfg-vk *
 # Case RGB
 openrgb
 
+
+# Steam
+MANGOHUD=1 gamemoderun DXVK_ASYNC=1 PROTON_NO_ESYNC=1 PROTON_USE_DXVK=1 PROTON_USE_NTSYNC=1 %command%
+
