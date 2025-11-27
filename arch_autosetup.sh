@@ -197,11 +197,12 @@ echo -e "${GREEN}✔ AUR packages installed!${NC}"
 # ===== Enable Services =====
 echo -e "${BLUE}Enabling system services...${NC}"
 sudo systemctl enable --now NetworkManager
+sudo systemctl enable --now bluetooth
 sudo systemctl enable --now uxplay
 sudo systemctl enable --now keyd
 sudo systemctl enable --now sshd
-systemctl --user enable uxplay
-systemctl --user enable --now pipewire.service pipewire-pulse.service wireplumber.service 2>/dev/null || true
+sudo systemctl enable --now avahi-deamon
+systemctl enable --now pipewire.service pipewire-pulse.service wireplumber.service 2>/dev/null || true
 echo -e "${GREEN}✔ Services enabled${NC}"
 
 # ===== Git Configuration =====
