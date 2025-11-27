@@ -22,11 +22,11 @@ echo -e "3) linux-lts (long-term support)${NC}"
 read -p "Enter choice (1/2/3): " kernel_choice
 
 case $kernel_choice in
-    1|"")
+    1)
         KERNEL="linux"
         HEADERS="linux-headers"
         ;;
-    2)
+    2|"")
         KERNEL="linux-zen"
         HEADERS="linux-zen-headers"
         ;;
