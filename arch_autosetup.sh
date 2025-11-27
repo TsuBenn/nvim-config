@@ -198,10 +198,9 @@ echo -e "${GREEN}✔ AUR packages installed!${NC}"
 echo -e "${BLUE}Enabling system services...${NC}"
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now bluetooth
-sudo systemctl enable --now uxplay
 sudo systemctl enable --now keyd
 sudo systemctl enable --now sshd
-sudo systemctl enable --now avahi-deamon
+systemctl enable --now avahi-daemon
 systemctl enable --now pipewire.service pipewire-pulse.service wireplumber.service 2>/dev/null || true
 echo -e "${GREEN}✔ Services enabled${NC}"
 
@@ -213,9 +212,25 @@ git config --global user.name "$git_user"
 git config --global user.email "$git_email"
 echo -e "${GREEN}✔ Git configured successfully!${NC}\n"
 
+# ===== Set Keyd config =====
+sudo mkdir -p /etc/keyd
+sudo tee /etc/keyd/default.conf > /dev/null << 'EOF'
+[ids]
+
+*
+
+[main]
+
+capslock = esc
+
+esc = `
+EOF
+echo "Keyd config created at /etc/keyd/default.conf"
+sudo keyd reload
+
+
 # ===== System Update =====
 echo -e "${BLUE}Updating system...${NC}"
-
 
 # ===== Manual Reminders =====
 echo -e "${YELLOW}\nRemember to manually configure:${NC}"
