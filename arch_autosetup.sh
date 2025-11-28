@@ -66,7 +66,7 @@ fi
 
 BASE_PKGS=(
     base linux-firmware sudo git base-devel grub timeshift
-    networkmanager reflector man openssh
+    networkmanager reflector man openssh keyd
 )
 
 BLUETOOTH=(
