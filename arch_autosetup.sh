@@ -28,16 +28,16 @@ case $kernel_choice in
         ;;
     2|"")
         KERNEL="linux-zen"
-        HEADERS="linux-zen-headers"
+        HEADERS="linux-zen-headers linux-headers"
         ;;
     3)
         KERNEL="linux-lts"
-        HEADERS="linux-lts-headers"
+        HEADERS="linux-lts-headers linux-headers"
         ;;
     *)
         echo -e "${RED}Invalid choice, installing Linux-zen.${NC}"
         KERNEL="linux-zen"
-        HEADERS="linux-zen-headers"
+        HEADERS="linux-zen-headers linux-headers"
         ;;
 esac
 
@@ -65,7 +65,7 @@ fi
 # ===== Package Arrays =====
 
 BASE_PKGS=(
-    base linux-firmware sudo git base-devel grub timeshift
+    base amd-ucode linux-firmware sudo git base-devel grub timeshift
     networkmanager reflector man openssh keyd
 )
 
