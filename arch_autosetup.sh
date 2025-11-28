@@ -110,6 +110,7 @@ ESSENTIAL_APPS=(
     firefox discord obs-studio 7zip zoxide filelight ark mpv yazi dolphin
     vlc vlc-plugin-x264 vlc-plugin-ffmpeg lame libmad pinta openrgb github-cli
     flatpak avahi
+    rofi rofi-emoji
 )
 
 MONITORING=(btop nvtop)
