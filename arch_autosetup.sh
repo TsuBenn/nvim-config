@@ -161,6 +161,7 @@ install_packages() {
 install_packages "Base System" "${BASE_PKGS[@]}"
 install_packages "Bluetooh" "${BLUETOOTH[@]}"
 install_packages "Development Tools" "${DEV_PKGS[@]}"
+install_packages "Gaming Packages" "${GAMING_PKGS[@]}"
 install_packages "Terminals" "${TERMINALS[@]}"
 install_packages "Hyprland & Portal" "${HYPR_PKGS[@]}"
 install_packages "Fonts" "${FONTS[@]}"
