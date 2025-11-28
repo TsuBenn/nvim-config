@@ -125,6 +125,7 @@ RICING=(
 
 # ===== AUR Packages =====
 AUR_PACKAGES=(
+    spotify
     xboxdrv
     proton-ge-custom-bin
     cbonsai
