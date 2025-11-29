@@ -132,6 +132,7 @@ RICING=(
 # ===== AUR Packages =====
 AUR_PACKAGES=(
     spotify
+    ds4drv
     proton-ge-custom-bin
     cbonsai
     alac
