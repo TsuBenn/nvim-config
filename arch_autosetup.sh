@@ -98,12 +98,15 @@ NVIDIA_PKGS=(
 
 GAMING_PKGS=(
     steam
-    mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon 
+    mesa lib32-mesa 
+    vulkan-radeon lib32-vulkan-radeon 
     gamemode lib32-gamemode 
     gamescope
     mangohud goverlay
-    wine winetricks 
-    python-kivy lib32-vulkan-icd-loader vulkan-driver 
+    wine 
+    winetricks 
+    python-kivy 
+    lib32-vulkan-icd-loader vulkan-driver 
 )
 
 
@@ -112,6 +115,7 @@ ESSENTIAL_APPS=(
     vlc vlc-plugin-x264 vlc-plugin-ffmpeg lame libmad pinta openrgb github-cli
     flatpak avahi
     rofi rofi-emoji
+    fastfetch
 )
 
 MONITORING=(btop nvtop)
