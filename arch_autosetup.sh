@@ -139,6 +139,7 @@ AUR_PACKAGES=(
     wavpack
     portproton
     clipvault
+    qalculate-qt
     uxplay
     adb
     lsfg-vk
@@ -147,7 +148,6 @@ AUR_PACKAGES=(
 
 # ===== Flatpak Apps =====
 FLATPAK_APPS=(
-    qalculator
     kdenlive
 )
 
