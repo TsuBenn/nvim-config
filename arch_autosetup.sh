@@ -141,13 +141,13 @@ AUR_PACKAGES=(
     clipvault
     uxplay
     adb
-    qalculator
     lsfg-vk
     qimgv
 )
 
 # ===== Flatpak Apps =====
 FLATPAK_APPS=(
+    qalculator
     kdenlive
 )
 
@@ -197,7 +197,7 @@ for PKG in "${AUR_PACKAGES[@]}"; do
 done
 echo -e "${GREEN}✔ AUR packages installed!${NC}"
 
-# ===== Install AUR Packages =====
+# ===== Install Flatpak Apps =====
 echo -e "${BLUE}Installing Flatpak apps...${NC}"
 for PKG in "${FLATPAK_APPS[@]}"; do
     echo -e "${CYAN}→ Installing (Flatpak) $PKG...${NC}"
