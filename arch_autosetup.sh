@@ -22,11 +22,11 @@ echo -e "3) linux-lts (long-term support)${NC}"
 read -p "Enter choice (1/2/3): " kernel_choice
 
 case $kernel_choice in
-    1)
+    1|"")
         KERNEL="linux"
         HEADERS="linux-headers"
         ;;
-    2|"")
+    2)
         KERNEL="linux-zen"
         HEADERS="linux-zen-headers linux-headers"
         ;;
@@ -35,9 +35,9 @@ case $kernel_choice in
         HEADERS="linux-lts-headers linux-headers"
         ;;
     *)
-        echo -e "${RED}Invalid choice, installing Linux-zen.${NC}"
-        KERNEL="linux-zen"
-        HEADERS="linux-zen-headers linux-headers"
+        echo -e "${RED}Invalid choice, installing Normal Linux.${NC}"
+        KERNEL="linux"
+        HEADERS="linux linux-headers"
         ;;
 esac
 
@@ -93,7 +93,7 @@ AUDIO_PKGS=(
 )
 
 NVIDIA_PKGS=(
-    nvidia-utils lib32-nvidia-utils libva-nvidia-driver
+    nvidia-utils lib32-nvidia-utils libva-nvidia-driver egl-wayland
 )
 
 GAMING_PKGS=(
@@ -111,7 +111,7 @@ GAMING_PKGS=(
 
 
 ESSENTIAL_APPS=(
-    firefox discord obs-studio 7zip zoxide filelight ark mpv yazi dolphin
+    discord obs-studio 7zip zoxide filelight ark mpv yazi dolphin
     vlc vlc-plugin-x264 vlc-plugin-ffmpeg lame libmad pinta openrgb github-cli
     flatpak avahi
     rofi rofi-emoji
@@ -131,6 +131,8 @@ RICING=(
 
 # ===== AUR Packages =====
 AUR_PACKAGES=(
+    nvidia-vaapi-driver
+    localsend
     spotify
     ds4drv
     proton-ge-custom-bin
@@ -149,6 +151,7 @@ AUR_PACKAGES=(
 # ===== Flatpak Apps =====
 FLATPAK_APPS=(
     kdenlive
+    zen_browser
 )
 
 # ===== Install Function =====
