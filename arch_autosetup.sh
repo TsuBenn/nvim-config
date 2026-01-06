@@ -146,7 +146,7 @@ AUR_PACKAGES=(
     adb
     lsfg-vk
     qimgv
-    zen-browser
+    zen-browser-bin
 )
 
 # ===== Flatpak Apps =====
