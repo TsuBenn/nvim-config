@@ -208,6 +208,14 @@ for PKG in "${FLATPAK_APPS[@]}"; do
 done
 echo -e "${GREEN}✔ Flatpak packages installed!${NC}"
 
+
+# ===== Enable Spotify Ad-Blocker =====
+echo -e "${BLUE}Installing Spotify ad-blocker...${NC}"
+git clone https://github.com/abba23/spotify-adblock.git
+cd spotify-adblock
+make
+echo -e "${GREEN}✔ Ad-blocked Spotify successfully!${NC}"
+
 # ===== Enable Services =====
 echo -e "${BLUE}Enabling system services...${NC}"
 sudo systemctl enable --now NetworkManager
