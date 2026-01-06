@@ -206,7 +206,7 @@ for PKG in "${FLATPAK_APPS[@]}"; do
     echo -e "${CYAN}→ Installing (Flatpak) $PKG...${NC}"
     flatpak install "$PKG"
 done
-echo -e "${GREEN}✔ AUR packages installed!${NC}"
+echo -e "${GREEN}✔ Flatpak packages installed!${NC}"
 
 # ===== Enable Services =====
 echo -e "${BLUE}Enabling system services...${NC}"
