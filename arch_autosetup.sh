@@ -146,12 +146,12 @@ AUR_PACKAGES=(
     adb
     lsfg-vk
     qimgv
+    zen-browser
 )
 
 # ===== Flatpak Apps =====
 FLATPAK_APPS=(
     kdenlive
-    zen_browser
 )
 
 # ===== Install Function =====
