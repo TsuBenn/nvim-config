@@ -17,6 +17,7 @@ local git_cmds = {
     { "blame                │ Blame", ":Git blame" },
     { "fetch && reset       │ Sync with Github Repo", ":!git fetch origin && git reset --hard origin/main" },
     { "init                 │ Git Initiate", ":Git init" },
+    { "status               │ Status", ":Git status" },
 }
 
 local function prompt_user(prompt_text, callback)
