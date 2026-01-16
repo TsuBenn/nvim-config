@@ -75,7 +75,7 @@ BLUETOOTH=(
 
 DEV_PKGS=(
     npm nodejs python unzip clang clang-tools-extra rustup go fzf fd
-    lazygit tree-sitter-cli meson cmake make
+    lazygit tree-sitter-cli meson cmake make unixodbc
 )
 
 TERMINALS=(kitty)
