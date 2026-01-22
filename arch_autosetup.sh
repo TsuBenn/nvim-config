@@ -136,6 +136,7 @@ AUR_PACKAGES=(
     spotify
     ds4drv
     proton-ge-custom-bin
+    protonplus
     cbonsai
     alac
     wavpack
@@ -147,11 +148,11 @@ AUR_PACKAGES=(
     lsfg-vk
     qimgv
     zen-browser-bin
+    kdenlive
 )
 
 # ===== Flatpak Apps =====
 FLATPAK_APPS=(
-    kdenlive
 )
 
 # ===== Install Function =====
