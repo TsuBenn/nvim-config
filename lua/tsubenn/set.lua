@@ -1,7 +1,7 @@
 vim.opt.cursorline = true
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.wrap = true
 
@@ -42,7 +42,7 @@ vim.opt.smartcase= true
 
 vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('hightlight-yank', {clear = true}),
-    callback = function() 
+    callback = function()
         vim.highlight.on_yank()
     end
 })
