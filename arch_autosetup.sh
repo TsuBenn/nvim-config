@@ -116,6 +116,7 @@ ESSENTIAL_APPS=(
     flatpak avahi
     rofi rofi-emoji wtype
     fastfetch
+    cloc
 )
 
 MONITORING=(btop nvtop)
