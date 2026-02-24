@@ -12,4 +12,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require("tsubenn")
+
+vim.lsp.config("qmlls", require("lsp.qmlls"))
+vim.lsp.enable("qmlls")
+
+vim.lsp.config("lua_ls", require("lsp.lua_ls"))
+vim.lsp.enable("lua_ls")
+
+vim.lsp.config("clangd", require("lsp.clangd"))
+vim.lsp.enable("clangd")
