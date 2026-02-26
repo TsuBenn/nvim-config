@@ -62,25 +62,25 @@ vim.keymap.set('n','wl','<C-w>l') -- Switch to the right Window
 vim.keymap.set('n','wI', function()
     if vim.fn.winnr('$') > 1 then
         return '<C-w>k:Ex<CR>'
-    else return '<C-w>k' 
+    else return '<C-w>k'
     end
 end,{expr = true}) -- Switch to the Window above then open Explorer
 vim.keymap.set('n','wJ',function()
     if vim.fn.winnr('$') > 1 then
         return '<C-w>h:Ex<CR>'
-    else return '<C-w>h' 
+    else return '<C-w>h'
     end
 end,{expr = true}) -- Switch to the left Window then open Explorer
 vim.keymap.set('n','wK',function()
     if vim.fn.winnr('$') > 1 then
         return '<C-w>j:Ex<CR>'
-    else return '<C-w>j' 
+    else return '<C-w>j'
     end
 end,{expr = true}) -- Switch to the Window below then open Explorer
 vim.keymap.set('n','wL',function()
     if vim.fn.winnr('$') > 1 then
         return '<C-w>l:Ex<CR>'
-    else return '<C-w>l' 
+    else return '<C-w>l'
     end
 end,{expr = true}) -- Switch to the right Window then open Explorer
 
