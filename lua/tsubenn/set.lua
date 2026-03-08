@@ -37,7 +37,7 @@ vim.opt.smartindent = true
 
 vim.opt.winborder = "rounded"
 
-vim.opt.guicursor = "n-v-c:block"
+-- vim.opt.guicursor = "n-v-c:block"
 
 vim.opt.ignorecase= true
 vim.opt.smartcase= true
