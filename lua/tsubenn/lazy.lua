@@ -81,6 +81,7 @@ return {
             quote = {
                 icon = "▋",
             },
-        }    }
+        }
+    }
 
 }

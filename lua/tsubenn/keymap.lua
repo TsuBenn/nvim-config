@@ -398,7 +398,6 @@ local function char_after_cursor()
     return char
 end
 
-
 --[[ Brackets and Quotes Table ]]--
 local bracket = {}
 bracket["{"] = "}"
@@ -435,8 +434,11 @@ vim.keymap.set('x','<CR>','s<CR>')
 vim.keymap.set('i','<CR>',function()
     if char_after_cursor() == bracket[char_behind_cursor()] then
         return '<CR><ESC>O'
-    elseif char_behind_cursor() == bracket[char_behind_behind_cursor()] then
-        return '<Left><CR><ESC>O'
+    elseif char_behind_cursor() then
+        if char_behind_cursor() == bracket[char_behind_behind_cursor()] then
+            return '<Left><CR><ESC>O'
+        end
+        return '<CR>'
     else return '<CR>'
     end
 end, {expr = true})
