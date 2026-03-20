@@ -52,16 +52,9 @@ return {
         { "nvim-lua/plenary.nvim" }, -- required by lspsaga
     },
     {
-        "3rd/image.nvim",
-        opts = {
-            backend = "kitty",  -- or "ueberzug" if you don't use kitty
-        }
-    },
-    {
         "MeanderingProgrammer/render-markdown.nvim",
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
-            "3rd/image.nvim"
         },
         opts = {
             heading = {
