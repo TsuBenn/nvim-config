@@ -59,27 +59,26 @@ return {
         opts = {
             heading = {
                 sign = false,
-                icons = { "# ", "## ", "### ", "#### ", "##### ", "###### " },
+                icons = { "", "## ", "### ", "#### ", "##### ", "###### " }, -- no icons, just clean text
                 border = false,
+                backgrounds = {
+                    "RenderMarkdownH1Bg",
+                    "RenderMarkdownH2Bg",
+                    "RenderMarkdownH3Bg",
+                    "RenderMarkdownH4Bg",
+                    "RenderMarkdownH5Bg",
+                    "RenderMarkdownH6Bg",
+                },
+
             },
             code = {
                 sign = false,
                 style = "full",
-                border = "thin",
+                border = "none",
+                highlight = "RenderMarkdownCode", -- subtle background only
             },
             bullet = {
-                icons = { "●", "○", "◆", "◇" },
-            },
-            checkbox = {
-                unchecked = { icon = "☐ " },
-                checked = { icon = "☑ " },
-            },
-            dash = {
-                icon = "─",
-                width = "full",
-            },
-            quote = {
-                icon = "▋",
+                icons = { "•" }, -- simple bullet like glow
             },
         }
     }

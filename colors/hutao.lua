@@ -90,4 +90,21 @@ vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = colors.fg, bg = "NONE" })
 vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = colors.orange, bg = "NONE" })
 vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = colors.brown, bg = "NONE" })
 
+-- For Markdown Rendering
+vim.api.nvim_set_hl(0, "RenderMarkdownH1", { fg = "#add8ff", bold = true })
+vim.api.nvim_set_hl(0, "RenderMarkdownH2", { fg = "#ff6161", bold = true })
+vim.api.nvim_set_hl(0, "RenderMarkdownH3", { fg = "#ffb380", bold = true })
+vim.api.nvim_set_hl(0, "RenderMarkdownH4", { fg = "#e0c0ff", bold = true })
+vim.api.nvim_set_hl(0, "RenderMarkdownH5", { fg = "#c0eaff", bold = true })
+vim.api.nvim_set_hl(0, "RenderMarkdownH6", { fg = "#ffaabb", bold = true })
+
+vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { bg = "#2a3f6f" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { bg = "#822b2b" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { bg = "#4a2e1a" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { bg = "#3a2a5a" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { bg = "#1a3a5a" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { bg = "#5a1a2a" })
+
+vim.api.nvim_set_hl(0, "RenderMarkdownCode", { bg = "#1e2030" })
+
 
