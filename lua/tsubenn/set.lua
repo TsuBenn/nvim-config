@@ -3,12 +3,22 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = false
 
+
 vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "text" },
+    callback = function()
+        vim.opt_local.spell = true
+        vim.opt_local.spelllang = "en_us"
+    end
+})
+
 vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.undofile = true
 
