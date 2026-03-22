@@ -23,3 +23,6 @@ vim.lsp.enable("lua_ls")
 
 vim.lsp.config("clangd", require("lsp.clangd"))
 vim.lsp.enable("clangd")
+
+vim.lsp.config("harper_ls", require("lsp.harper_ls"))
+vim.lsp.enable("harper_ls")
