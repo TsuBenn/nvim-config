@@ -3,7 +3,6 @@ vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = false
 
-
 vim.opt.wrap = true
 
 vim.opt.swapfile = false
@@ -34,6 +33,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = ""
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})
 
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 0

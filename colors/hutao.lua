@@ -17,8 +17,11 @@ vim.api.nvim_set_hl(0, "Normal",        { fg = colors.fg, bg = "none" })
 vim.api.nvim_set_hl(0, "Comment",       { fg = colors.comment, italic = true })
 
 -- Cursorline
-vim.api.nvim_set_hl(0, "CursorLine",    { bg = "#302424" })
+vim.api.nvim_set_hl(0, "CursorLine",    { bg = "#241c1c" })
 vim.api.nvim_set_hl(0, "CursorLineNr",  { fg = colors.yellow, bold = true })
+
+-- ColorColumn
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#241c1c" })
 
 -- Visual
 vim.api.nvim_set_hl(0, "Visual",        { fg = "#ffffff",  bg = "#567782" })

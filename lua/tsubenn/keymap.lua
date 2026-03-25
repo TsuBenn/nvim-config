@@ -162,10 +162,10 @@ vim.keymap.set('x', 'C' , '<ESC>`<^V`>y`>p') -- Copy whole line(normal)
 vim.keymap.set('x', 'c' , 'y') -- Copy whole line(visual)
 
 --[[ Basic movement ]]--
-vim.keymap.set({'n','x'},'i','k')
+vim.keymap.set({'n','x'},'i',"v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set({'n','x'},'j','h')
 vim.keymap.set({'n','x'},'l','l')
-vim.keymap.set({'n','x'},'k','j')
+vim.keymap.set({'n','x'},'k',"v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 --[[ Word jump ]]--
 vim.keymap.set({'n','x'},'J','b')
