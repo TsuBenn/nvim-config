@@ -51,42 +51,5 @@ return {
         { "nvimdev/lspsaga.nvim", config = true },
         { "nvim-lua/plenary.nvim" }, -- required by lspsaga
     },
-    {
-        "MeanderingProgrammer/render-markdown.nvim",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
-        opts = {
-            heading = {
-                sign = false,
-                icons = { "", "## ", "### ", "#### ", "##### ", "###### " }, -- no icons, just clean text
-                border = false,
-                backgrounds = {
-                    "RenderMarkdownH1Bg",
-                    "RenderMarkdownH2Bg",
-                    "RenderMarkdownH3Bg",
-                    "RenderMarkdownH4Bg",
-                    "RenderMarkdownH5Bg",
-                    "RenderMarkdownH6Bg",
-                },
-
-            },
-            code = {
-                sign = false,
-                style = "full",
-                border = "none",
-                highlight = "RenderMarkdownCode", -- subtle background only
-            },
-            bullet = {
-                icons = { "•" }, -- simple bullet like glow
-            },
-            callout = {
-                note = { raw = "[!NOTE]", rendered = "󰋽 Note", highlight = "RenderMarkdownInfo" },
-                tip = { raw = "[!TIP]", rendered = "󰌶 Tip", highlight = "RenderMarkdownSuccess" },
-                warning = { raw = "[!WARNING]", rendered = "󰀪 Warning", highlight = "RenderMarkdownWarn" },
-                caution = { raw = "[!CAUTION]", rendered = "󰳦 Caution", highlight = "RenderMarkdownError" },
-            }
-        }
-    }
 
 }
