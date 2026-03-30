@@ -17,7 +17,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
-vim.opt.clipboard = "unnamedplus"
+if vim.env.DISPLAY or vim.env.WAYLAND_DISPLAY then
+    vim.opt.clipboard = "unnamedplus"
+end
 
 vim.opt.undofile = true
 
